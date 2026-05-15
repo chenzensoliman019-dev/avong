@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Avong Nen Romy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Agdasima:wght@700&family=Big+Shoulders+Stencil+Display:wght@800&family=Caesar+Dressing:wght@400&display=swap" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- ═══════════════════════════════════════
+       HOME PAGE
+  ═══════════════════════════════════════ -->
+  <div id="pg-home" class="page active">
+    <div class="navbar">
+      <div class="logo">avong nen romy</div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="show('pg-home')">HOME</button>
+        <button class="nav-btn" onclick="show('pg-activities')">ACTIVITIES</button>
+        <button class="nav-btn" onclick="show('pg-booking')">BOOKING</button>
+        <button class="nav-btn" onclick="show('pg-about')">ABOUT</button>
+      </div>
+    </div>
+
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">AVONG NEN ROMY</h1>
+        <p class="hero-subtitle">Adventure Awaits in the Highlands</p>
+        <button class="cta-button" onclick="show('pg-activities')">Explore Activities</button>
+      </div>
+    </div>
+
+    <div class="featured-section">
+      <h2>Featured Activities</h2>
+      <div class="activity-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🏹</div>
+          <h3>Archery</h3>
+          <p>Test your precision and focus</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🎯</div>
+          <h3>Throwing Sports</h3>
+          <p>Master accuracy and control</p>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🎮</div>
+          <h3>Airsoft</h3>
+          <p>Team-based tactical fun</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       ACTIVITIES PAGE
+  ═══════════════════════════════════════ -->
+  <div id="pg-activities" class="page">
+    <div class="navbar">
+      <div class="logo">avong nen romy</div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="show('pg-home')">HOME</button>
+        <button class="nav-btn" onclick="show('pg-activities')">ACTIVITIES</button>
+        <button class="nav-btn" onclick="show('pg-booking')">BOOKING</button>
+        <button class="nav-btn" onclick="show('pg-about')">ABOUT</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h1>Our Activities</h1>
+      <div class="activities-list">
+        <div class="activity-detail">
+          <h2>🏹 Archery</h2>
+          <p>Experience the ancient art of archery in a safe, controlled environment. Perfect for beginners and experienced archers alike.</p>
+          <ul>
+            <li>Professional instructors</li>
+            <li>Modern equipment</li>
+            <li>Group or individual sessions</li>
+          </ul>
+        </div>
+
+        <div class="activity-detail">
+          <h2>🎯 Throwing Sports</h2>
+          <p>Challenge yourself with various throwing disciplines including axe throwing and disc sports.</p>
+          <ul>
+            <li>Multiple throwing disciplines</li>
+            <li>Safety-first approach</li>
+            <li>Competitive or casual options</li>
+          </ul>
+        </div>
+
+        <div class="activity-detail">
+          <h2>🎮 Airsoft</h2>
+          <p>Engage in tactical team-based gameplay in our dedicated airsoft arena.</p>
+          <ul>
+            <li>Themed scenarios</li>
+            <li>Equipment rental available</li>
+            <li>Group battles & tournaments</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="back-btn" onclick="show('pg-home')">← Back to Home</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       BOOKING PAGE
+  ═══════════════════════════════════════ -->
+  <div id="pg-booking" class="page">
+    <div class="navbar">
+      <div class="logo">avong nen romy</div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="show('pg-home')">HOME</button>
+        <button class="nav-btn" onclick="show('pg-activities')">ACTIVITIES</button>
+        <button class="nav-btn" onclick="show('pg-booking')">BOOKING</button>
+        <button class="nav-btn" onclick="show('pg-about')">ABOUT</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h1>Book Your Experience</h1>
+      <form class="booking-form" onsubmit="handleBooking(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="activity">Select Activity</label>
+          <select id="activity" name="activity" required>
+            <option value="">Choose an activity...</option>
+            <option value="archery">Archery</option>
+            <option value="throwing">Throwing Sports</option>
+            <option value="airsoft">Airsoft</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Preferred Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <input type="number" id="guests" name="guests" min="1" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Booking</button>
+      </form>
+
+      <button class="back-btn" onclick="show('pg-home')">← Back to Home</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       ABOUT PAGE
+  ═══════════════════════════════════════ -->
+  <div id="pg-about" class="page">
+    <div class="navbar">
+      <div class="logo">avong nen romy</div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="show('pg-home')">HOME</button>
+        <button class="nav-btn" onclick="show('pg-activities')">ACTIVITIES</button>
+        <button class="nav-btn" onclick="show('pg-booking')">BOOKING</button>
+        <button class="nav-btn" onclick="show('pg-about')">ABOUT</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <h1>About Us</h1>
+      <div class="about-section">
+        <h2>Welcome to Avong Nen Romy</h2>
+        <p>Located in the cool highlands of La Trinidad, Benguet, Avong Nen Romy is a nature-based destination that offers a perfect balance of relaxation and adventure. Surrounded by pine trees and fresh mountain air, it provides a peaceful escape where visitors can unwind while enjoying exciting outdoor activities.</p>
+
+        <p>Originally developed as a private property, it has grown into a well-known eco-tourism site that promotes wellness, recreation, and community engagement. Here, people can recharge, bond, and create lasting memories.</p>
+
+        <h3>Our Mission</h3>
+        <p>To provide a safe, exciting, and nature-centered environment where individuals and groups can enjoy outdoor activities, develop skills, and experience meaningful moments.</p>
+
+        <h3>Our Vision</h3>
+        <p>To become one of the leading outdoor recreation destinations in Benguet, known for adventure, quality service, and unforgettable experiences.</p>
+
+        <h3>Why Choose Us</h3>
+        <ul>
+          <li>Unique combination of archery, throwing, and airsoft</li>
+          <li>Safe and controlled activity areas</li>
+          <li>Relaxing natural environment</li>
+          <li>Perfect for both adventure and leisure</li>
+          <li>Ideal for friends, families, and teams</li>
+        </ul>
+
+        <h3>Contact Us</h3>
+        <p>
+          <strong>Location:</strong> La Trinidad, Benguet<br />
+          <strong>Email:</strong> info@avongnenromy.com<br />
+          <strong>Phone:</strong> +63 (0)2 1234 5678
+        </p>
+      </div>
+
+      <button class="back-btn" onclick="show('pg-home')">← Back to Home</button>
+    </div>
+  </div>
+
+</div><!-- #app -->
+
+<script src="script.js"></script>
+</body>
+</html>
